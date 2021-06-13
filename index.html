@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Etch a Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <div class="header">
+        <h1>Etch A Sketch</h1>
+      </div>
+      <div class="pad"></div>
+      <div class="pen-color">
+        <ul class="pen-color-select-bar">
+          <li><button class="p-grey">Grey</button></li>
+          <li><button class="p-rainbow">Rb</button></li>
+          <li><button class="p-blue">Blue</button></li>
+          <li><button class="p-red">Red</button></li>
+          <li><button class="reset-pad">RESET</button></li>
+        </ul>
+      </div>
+      <div class="slider-bar">
+        <input
+          type="range"
+          id="pixel-size-bar"
+          name="slider"
+          min="16"
+          max="100"
+          step="2"
+        />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+html {
+  background: rgb(0, 22, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 22, 42, 1) 0%,
+    rgba(0, 31, 60, 1) 43%,
+    rgba(6, 46, 83, 1) 100%
+  );
+  color: #fff;
+}
+
+#container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  /* border: aliceblue solid 2px; */
+}
+
+.header {
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.pad {
+  background-color: #f0f8ff;
+  border: #f0f8ff solid 2px;
+  width: 600px;
+  height: 600px;
+
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+}
+
+.pen-color-select-bar {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 20px;
+
+  /* border: #f0f8ff solid 2px; */
+}
+
+.pen-color-select-bar > li {
+  padding: 20px;
+  /* border: #f0f8ff solid 2px; */
+}
+
+.pen-color-select-bar > li > button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+}
+
+.p-grey {
+  background-color: gray;
+}
+
+.p-rainbow {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 2%,
+    rgba(131, 58, 180, 1) 9%,
+    rgba(44, 192, 131, 1) 25%,
+    rgba(212, 179, 39, 1) 38%,
+    rgba(253, 29, 29, 1) 58%,
+    rgba(253, 40, 151, 1) 72%,
+    rgba(252, 117, 53, 1) 83%,
+    rgba(252, 176, 69, 1) 95%
+  );
+}
+
+.p-blue {
+  background-color: #086695;
+}
+
+.p-red {
+  background-color: #782424;
+}
+
+.pen-color-select-bar > li > button:hover {
+  transform: scale(1.2);
+}
+
+.p-grey:hover {
+  box-shadow: 3px 3px 5px 6px gray;
+}
+
+.p-blue:hover {
+  box-shadow: 3px 3px 5px 6px #086695;
+}
+
+.p-red:hover {
+  box-shadow: 3px 3px 5px 6px #782424;
+}
+
+.reset-pad:hover {
+  box-shadow: 3px 3px 5px 6px #fff;
+}
+
+.p-rainbow:hover {
+  box-shadow: 3px 3px 5px 6px rgba(212, 179, 39, 1),
+    4px 3px 5px 6px rgba(44, 192, 131, 1), 3px 3px 5px 6px rgba(253, 29, 29, 1);
+}
