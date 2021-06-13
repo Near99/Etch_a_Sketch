@@ -1,12 +1,13 @@
 const wrapper = document.querySelector('.pad');
 const greyButton = document.querySelector('.p-grey');
 const blueButton = document.querySelector('.p-blue');
-const redButton = document.querySelector('.p-red');
+const pinkButton = document.querySelector('.p-pink');
+const greenButton = document.querySelector('.p-green');
 const rainbowButton = document.querySelector('.p-rainbow');
 const resetButton = document.querySelector('.reset-pad');
 const slider = document.querySelector('.slider-bar');
 
-// Create grid
+// Create and add divs into container
 function addNewDiv(columns, rows) {
   let n = columns * rows;
   for (let i = 0; i < n; i++) {
@@ -16,8 +17,8 @@ function addNewDiv(columns, rows) {
   }
 }
 
-// Gray theme play
-function grayTheme() {
+// Grey
+function grayPen() {
   divs.forEach((items) =>
     items.addEventListener('mouseenter', function (e) {
       e.target.style.background = '#bec5cb';
@@ -27,31 +28,42 @@ function grayTheme() {
   );
 }
 
-// Blue theme play
-function blueTheme() {
+// Blue
+function bluePen() {
   divs.forEach((items) =>
     items.addEventListener('mouseenter', function (e) {
-      e.target.style.background = '#086695';
+      e.target.style.background = '#63e1ff';
       e.target.style.filter = reduceBrightness(e.target.style.filter);
       console.log(e.target.style.filter);
     })
   );
 }
 
-// Red theme play
-function redTheme() {
+// Pink
+function pinkPen() {
   divs.forEach((items) =>
     items.addEventListener('mouseenter', function (e) {
-      e.target.style.background = '#782424';
+      e.target.style.background = '#ffb4b4';
       e.target.style.filter = reduceBrightness(e.target.style.filter);
       console.log(e.target.style.filter);
     })
   );
 }
 
-// Rainbow theme play
-function rainbowTheme() {
-  // Randomly generate numbers from 0 - 255;
+// Green
+function greenPen() {
+  divs.forEach((items) =>
+    items.addEventListener('mouseenter', function (e) {
+      e.target.style.background = '#c0ff8f';
+      e.target.style.filter = reduceBrightness(e.target.style.filter);
+      console.log(e.target.style.filter);
+    })
+  );
+}
+
+// Rainbow
+function rainbowPen() {
+  // Randomly generate numbers from 0 - 255
   function randomNum() {
     return Math.floor(Math.random() * 256);
   }
@@ -59,44 +71,46 @@ function rainbowTheme() {
     items.addEventListener('mouseenter', function (e) {
       e.target.style.background = `rgb(${randomNum()},${randomNum()},${randomNum()})`;
       e.target.style.filter = reduceBrightness(e.target.style.filter);
-      //   setTimeout(() => (e.target.style.background = 'none'), 500);
       console.log(e.target.style.filter);
     })
   );
 }
 
-// Reduce brightness by 10% every mouse passes
+// Reduce brightness by 10% each time mouse passes
 function reduceBrightness(brightnessValue) {
   let value = Number(brightnessValue.match(/(\d+)/)[0]);
   let newValue = `brightness(${value - 10}%)`;
   return newValue;
 }
 
-// Ajust pad size
+// Change pad size
 function sliderBarAdjument() {
   slider.oninput = function (input) {
-    // data-type: string
-    let boxSize = input.target.value;
-    wrapper.style.cssText = `grid-template-columns: repeat(${boxSize}, 1fr); grid-template-rows: repeat(${boxSize}, 1fr);`;
+    let padSize = input.target.value;
+    wrapper.style.cssText = `grid-template-columns: repeat(${padSize}, 1fr); grid-template-rows: repeat(${padSize}, 1fr);`;
     console.log(input.target.value);
   };
 }
 
 function buttons() {
   greyButton.addEventListener('click', function () {
-    grayTheme();
+    grayPen();
   });
 
   rainbowButton.addEventListener('click', function () {
-    rainbowTheme();
+    rainbowPen();
   });
 
   blueButton.addEventListener('click', function () {
-    blueTheme();
+    bluePen();
   });
 
-  redButton.addEventListener('click', function () {
-    redTheme();
+  pinkButton.addEventListener('click', function () {
+    pinkPen();
+  });
+
+  greenButton.addEventListener('click', function () {
+    greenPen();
   });
 
   resetButton.addEventListener('click', function () {
@@ -104,11 +118,12 @@ function buttons() {
   });
 }
 
-// Add new divs to the container makes grid box;
+// Add new divs to the container makes grid box
+// Set grid default 100*100 for zoom effect
 addNewDiv(100, 100);
-// Put all new created divs into array;
+// Put all new created divs into array
 const divs = Array.from(document.querySelectorAll('.newCreatedDiv'));
-// Set all divs brightness to 110%;
+// Set all divs brightness to 110%
 divs.forEach((items) => (items.style.filter = 'brightness(110%)'));
 
 buttons();

@@ -13,7 +13,7 @@ html {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  /* border: aliceblue solid 2px; */
+  padding-top: 3%;
 }
 
 .header {
@@ -38,13 +38,10 @@ html {
   flex-flow: row wrap;
   list-style: none;
   padding: 20px;
-
-  /* border: #f0f8ff solid 2px; */
 }
 
 .pen-color-select-bar > li {
   padding: 20px;
-  /* border: #f0f8ff solid 2px; */
 }
 
 .pen-color-select-bar > li > button {
@@ -74,11 +71,15 @@ html {
 }
 
 .p-blue {
-  background-color: #086695;
+  background-color: #63e1ff;
 }
 
-.p-red {
-  background-color: #782424;
+.p-pink {
+  background-color: #ffb4b4;
+}
+
+.p-green {
+  background-color: #c0ff8f;
 }
 
 .pen-color-select-bar > li > button:hover {
@@ -93,8 +94,12 @@ html {
   box-shadow: 3px 3px 5px 6px #086695;
 }
 
-.p-red:hover {
-  box-shadow: 3px 3px 5px 6px #782424;
+.p-pink:hover {
+  box-shadow: 3px 3px 5px 6px #ffb4b4;
+}
+
+.p-green:hover {
+  box-shadow: 3px 3px 5px 6px #c0ff8f;
 }
 
 .reset-pad:hover {
