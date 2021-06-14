@@ -1,4 +1,4 @@
-# Etch_a_Sketch from The Odin Project
+# Etch_A_Sketch from The Odin Project
 
 In use font is from Google Fonts
 
