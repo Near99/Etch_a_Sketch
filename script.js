@@ -92,6 +92,11 @@ function sliderBarAdjument() {
   };
 }
 
+// Set Brightness to 110%
+function setBrightness() {
+  divs.forEach((items) => (items.style.filter = 'brightness(110%)'));
+}
+
 function buttons() {
   greyButton.addEventListener('click', function () {
     grayPen();
@@ -115,16 +120,12 @@ function buttons() {
 
   resetButton.addEventListener('click', function () {
     divs.forEach((items) => (items.style.background = 'none'));
+    setBrightness();
   });
 }
 
-// Add new divs to the container makes grid box
-// Set grid default 100*100 for zoom effect
 addNewDiv(100, 100);
-// Put all new created divs into array
 const divs = Array.from(document.querySelectorAll('.newCreatedDiv'));
-// Set all divs brightness to 110%
-divs.forEach((items) => (items.style.filter = 'brightness(110%)'));
-
-buttons();
 sliderBarAdjument();
+setBrightness();
+buttons();
