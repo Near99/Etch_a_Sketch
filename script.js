@@ -79,8 +79,13 @@ function rainbowPen() {
 // Reduce brightness by 10% each time mouse passes
 function reduceBrightness(brightnessValue) {
   let value = Number(brightnessValue.match(/(\d+)/)[0]);
-  let newValue = `brightness(${value - 10}%)`;
-  return newValue;
+  if (value > 0) {
+    let newValue = `brightness(${value - 10}%)`;
+    return newValue;
+  } else if (value === 0) {
+    let newValue = `brightness(${value + 80}%)`;
+    return newValue;
+  }
 }
 
 // Change pad size
